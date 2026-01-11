@@ -4,10 +4,10 @@ import json
 
 class TaxiData:
     def __init__(self):
-        self.df = pd.read_cs(TAXI_CSV_PATH)
+        self.df = pd.read_csv(TAXI_CSV_PATH)
         
-        def to_json(self):
-            return json.loads(self.df.to_json(orient="records"))
+    def to_json(self):
+        return json.loads(self.df.to_json(orient="records"))
 
 
 
