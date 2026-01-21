@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import httpx 
 
-URL = http://127.0.0.1:8000 
+URL = "http://127.0.0.1:8000"
 data = httpx.get(f"{URL}/taxi")
 
 df = pd.DataFrame(data.json())
