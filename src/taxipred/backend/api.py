@@ -6,9 +6,9 @@ from taxipred.utils.constants import CLEANED_TAXI_CSV_PATH, MODEL_PATH
 from taxipred.backend.data_processing import TaxiData, TaxiInput, PredictionOutput
 
 app = FastAPI()
-router = APIRouter(prefix="/api/taxi/v1")
+router = APIRouter(prefix="/taxi")
 
-# Load data + model
+# Ladda data och modell 
 taxi_data = TaxiData()
 model = joblib.load(MODEL_PATH)
 
@@ -21,10 +21,10 @@ def read_data():
 @router.post("/predict", response_model=PredictionOutput)
 def predict_price(payload: TaxiInput):
 
-    # Convert input to DataFrame
+    # Konvertera input till Dataframe
     df_input = pd.DataFrame([payload.model_dump()])
 
-    # Match the column order used during model training
+    # Säkerställ samma kolumnordning som användes vid modellträningen
     df_input = df_input[
         [
             "Trip_Distance_km",
@@ -37,7 +37,7 @@ def predict_price(payload: TaxiInput):
         ]
     ]
 
-    # Make prediction
+    # Gör förutsägelse
     prediction = model.predict(df_input)[0]
 
     return {"predicted_price": prediction}
