@@ -52,3 +52,10 @@ Frontend kommunicerar med backend via httpx.
 # Prediction result
 ![result](images/result.png)
 
+# Starta applikation 
+
+Start backend API:
+backend % uv run uvicorn api:app --reload
+
+Start frontend:
+frontend % streamlit run app.py
