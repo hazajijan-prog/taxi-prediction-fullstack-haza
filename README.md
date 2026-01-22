@@ -1,61 +1,66 @@
 # Taxi-prediction-fullstack-haza
 Machine Learning
 
-Detta projekt är en fullstack-applikation som förutspår taxipriser baserat på flera olika faktorer såsom distans, tid på dygnet, väder och trafik. 
+This project is a fullstack application that predicts taxi prices based on several different factors such as distance, time of day, weather, and traffic.
 
-**Applikationen består av:**
-- Backend (FastAPI) - som servrar data och gör prediktioner 
-- Machine Learning-modell - trännad taxidata 
-- Frontend (Streamlit) - där användaren kan se datasetet och testa prediktioner 
+**The application consists of:**
+- Backend (FastAPI) – serves data and handles predictions
+- Machine Learning model – trained on taxi data
+- Frontend (Streamlit) – where the user can view the dataset and test predictions
 
-**EDA & Data cleaning**
-I Jupyter genomfördes: 
-- Analys av dataset 
-- Hantering av nullvärden 
-- Borttagning av outliers
-- Val av relevanta features 
+**EDA & Data Cleaning**
+The following steps were performed in Jupyter Notebook:
+- Dataset analysis
+- Handling missing values
+- Removing outliers
+- Selecting relevant features
 
-Den rensade datan exporterades till final_data.csv 
+The cleaned data was exported to `final_data.csv`.
 
-**Machine Learning-modell**
-Flera modeller testades (Linear Regression, KNN, Random Forest)
-Random Forest valdes då den gav bäst resultat.  
-Den färdigtränade modellen sparades som final_model.joblib
+**Machine Learning Model**
+Several models were tested (Linear Regression, KNN, Random Forest).
 
+Random Forest was selected as it gave the best results.  
+The trained model was saved as `final_model.joblib`.
 
-**Backend - FastAPI**
-Backend laddar ML-modellen och erbjuder två endpoints:
-- **GET /taxi/data** – returnerar rensad taxidata.
-- **POST /taxi/predict** – tar emot användarens input och returnerar ett beräknat taxipris
+**Backend – FastAPI**
+The backend loads the ML model and provides two endpoints:
+- **GET /taxi/data** – returns cleaned taxi data
+- **POST /taxi/predict** – receives user input and returns a calculated taxi price
 
-Används av frontend för att hämta data och göra prediktioner.
-
+Used by the frontend to fetch data and make predictions.
 
 **Frontend – Streamlit**
-Applikationen består av tre sidor:
+The application consists of three pages:
+- **Home** – shows a short introduction and instructions on how to use the app
+- **View data** – displays the cleaned taxi data in table format directly from the backend
+- **Predict Taxi Price** – a form where the user enters trip details and gets a predicted taxi price.  
+  A "Show details" box displays which values were sent to the model.
 
-- **Home** – visar en kort introduktion och instruktioner för hur appen används.
-- **View data** – visar den rensade taxidatan i tabellform direkt från backend.
-- **Predict Taxi Price** – ett formulär där användaren fyller i resans detaljer och får ett beräknat taxipris. En "Show details"-ruta visar vilka värden som skickades till modellen.
+The frontend communicates with the backend via HTTP.
 
-Frontend kommunicerar med backend via httpx.
+---
 
-# Home
+## Application Screenshots
+
+### Home
 ![home](images/home.png)
 
-# View data
+### View data
 ![data](images/data.png)
 
-# Predict Taxi Price
+### Predict Taxi Price
 ![predict](images/predict.png)
 
-# Prediction result
+### Prediction result
 ![result](images/result.png)
 
-# Starta applikation 
+---
+
+## Start application
 
 Start backend API:
+```bash
 backend % uv run uvicorn api:app --reload
 
-Start frontend:
 frontend % streamlit run app.py
