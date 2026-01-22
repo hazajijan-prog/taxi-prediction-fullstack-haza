@@ -69,7 +69,7 @@ def main():
             result = response.json().get("predicted_price")
 
 
-            st.subheader(f"Predicted price: {result:.2f} USD")
+            st.success(f"Predicted price: {result:.2f} USD")
 
             with st.expander("Show details"):
                 st.write("### Prediction details")
