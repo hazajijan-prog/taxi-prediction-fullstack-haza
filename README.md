@@ -1,4 +1,4 @@
-# taxi-prediction-fullstack-haza
+# Taxi-prediction-fullstack-haza
 Machine Learning
 
 Detta projekt är en fullstack-applikation som förutspår taxipriser baserat på flera olika faktorer såsom distans, tid på dygnet, väder och trafik. 
