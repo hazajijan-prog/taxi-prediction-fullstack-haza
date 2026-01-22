@@ -8,7 +8,6 @@ from taxipred.backend.data_processing import TaxiData, TaxiInput, PredictionOutp
 app = FastAPI()
 router = APIRouter(prefix="/taxi")
 
-# Ladda data och modell 
 taxi_data = TaxiData()
 model = joblib.load(MODEL_PATH)
 
