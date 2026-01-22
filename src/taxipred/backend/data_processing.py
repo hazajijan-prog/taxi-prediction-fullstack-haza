@@ -18,7 +18,6 @@ class TaxiInput(BaseModel):
     Passenger_Count: int = Field(ge=1, le=4)
     Traffic_Conditions: Literal["Low", "Medium", "High"]
     Weather: Literal["Clear", "Rain", "Snow"]
-    Trip_Duration_Minutes: float = Field(gt=0)
-
+    Trip_Duration_Minutes: float | None = Field(default=None, gt=0, lt=125)
 class PredictionOutput(BaseModel): 
     predicted_price: float 
