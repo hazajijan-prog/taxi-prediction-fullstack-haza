@@ -62,7 +62,7 @@ The frontend communicates with the backend via HTTP.
 
 ## Start application
 
-Start backend API:
+Start API:
 ```bash
 backend % uv run uvicorn api:app --reload
 
