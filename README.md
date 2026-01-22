@@ -19,6 +19,9 @@ The cleaned data was exported to `final_data.csv`.
 
 **Machine Learning Model**
 Several models were tested (Linear Regression, KNN, Random Forest).
+Linear Regression achieved the best results and was selected as the final model.
+
+The trained model was saved as `final_model.joblib`.
 
 Random Forest was selected as it gave the best results.  
 The trained model was saved as `final_model.joblib`.
